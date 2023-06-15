@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Number Generator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+	<link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/icon.png') }}">
+
+    
+</head>
+<body>
+    <div class="container pt-2">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-1">
+                <img src="{{ url_for('static', filename='images/Logo.png') }}" class="img-fluid" alt="Logo" style="height: 80px; width: 48px;">
+            </div>
+            <div class="col-md-5">
+                <h1 class="text-center p-1" style="color: #803479;">Random Number Generator</h1>
+            </div>
+
+        </div>
+    </div>
+      
+    <hr />
+
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col">
+                <button id="startBtn" class="btn btn-secondary mt-2" style="background-color: #018743;">Initialize</button>
+                <button id="stopBtn" class="btn btn-secondary mt-2" style="background-color: red;">Shutdown</button>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <label for="quantity-input" class="form-label">Quantity:</label>
+                <input type="number" id="quantity-input" name="quantity" min="1" class="form-control" />
+            </div>
+            <div class="col">
+                <label for="numBits-input" class="form-label">NumBits:</label>
+                <input type="number" id="numBits-input" name="numBits" min="1" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <button id="generate-btn" class="btn btn-secondary mt-2" style="background-color: #803479;">Generate Random Hex Values</button>
+                <button disabled="true" id="export-btn" class="btn btn-secondary mt-2" style="background-color: #803479;">Export Random Hex Values</button>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col">
+                <div id="loading-spinner" style="display: none;">
+                    <img src="{{ url_for('static', filename='images/spinner.gif') }}" alt="Loading...">
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="table-responsive">
+                <table id="result-table" class="table table-striped" style="max-width: 100%; width: 100%;"></table>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    
+
+</body>
+</html>
